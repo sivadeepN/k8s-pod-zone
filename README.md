@@ -6,7 +6,7 @@ Use this in an init container like this
 
     initContainers:
     - name: get-pod-zone
-      image: artifactory-gojek.golabs.io:6555/pod-zone-docker:1.0
+      image: docker.io/sivadeep/k8s-pod-zone:latest
       command: ['/script.sh']
 
 
