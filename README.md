@@ -6,7 +6,7 @@ Use this in an init container like this
 
     initContainers:
     - name: get-pod-zone
-      image: artifactory-gojek.golabs.io:6555/pod-zone-docker:2.1
+      image: artifactory-gojek.golabs.io:6555/pod-zone-docker:1.0
       command: ['/script.sh']
 
 
@@ -17,3 +17,9 @@ and pass as a env variable like this
       valueFrom:
         fieldRef:
           fieldPath: metadata.labels['zone']  
+
+
+Steps for building an image on local:
+
+1. docker buildx build --platform linux/amd64 .
+2. docker tag image-id sivadeep/k8s-pod-zone

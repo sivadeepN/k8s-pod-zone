@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  containers:
+    - name: my-main-container
+      image: docker.io/alpine:latest
+      command: ["sh", "-c", "zone is set"]
+      env:
+        - name: ZONE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.labels['zone']
+  initContainers:
+    - name: get-pod-zone
+      image: docker.io/sivadeep/k8s-pod-zone:latest
+      command: ['/script.sh']
+  restartPolicy: Never
