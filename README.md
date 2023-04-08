@@ -23,3 +23,6 @@ Steps for building an image on local:
 
 1. docker buildx build --platform linux/amd64 .
 2. docker tag image-id sivadeep/k8s-pod-zone
+
+
+<img width="702" alt="Screenshot 2023-04-08 at 1 00 13 PM" src="https://user-images.githubusercontent.com/22883726/230709430-338ec020-e7ee-402d-af98-a839e8649d5f.png">
